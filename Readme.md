@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Ольга Фейш](https://up.htmlacademy.ru/javascript-individual/1/user/2084339).
-* Наставник: `Неизвестно`.
+* Наставник: [Олег Соловьев](https://htmlacademy.ru/profile/id2282557)
 
 ---
 
