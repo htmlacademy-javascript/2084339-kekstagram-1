@@ -85,6 +85,3 @@ getNumbers('ECMAScript 2022');
 getNumbers('1 кефир, 0.5 батона');
 getNumbers('агент 007');
 getNumbers('а я томат');
-
-
-
