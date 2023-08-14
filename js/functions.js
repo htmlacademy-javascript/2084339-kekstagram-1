@@ -64,8 +64,8 @@ const isPalindrome = function (string) {
 
   const stringModified = string.toLowerCase().replaceAll(' ', '');
 
-  for (let i = 0; i < stringModified.length - 1; i++) {
-    const stringPalindrome = (stringModified.at(i) === stringModified.at(-(i + 1))) ? 'true' : 'false';
+  for (let i = 0; i < ((stringModified.length + 2) / 2); i++) {
+    const stringPalindrome = (stringModified.at(i) !== stringModified.at(-(i + 1))) ? 'false' : 'true' ;
     return stringPalindrome;
   }
 };
