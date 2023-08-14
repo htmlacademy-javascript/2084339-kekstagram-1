@@ -1,3 +1,35 @@
+//извлекает цифры
+const getNumbers = function (string) {
+  let stringNew = '';
+
+  string = string.toString();
+
+  for (let i = 0; i <= string.length - 1; i++) {
+
+    if (!isNaN(parseInt(string[i], 10))) {
+      stringNew += parseInt(string[i], 10);
+    }
+
+    const newNumbers = parseInt(stringNew, 10);
+    return newNumbers;
+  }
+};
+
+getNumbers(-20);
+getNumbers('2023 год');
+getNumbers('ECMAScript 2022');
+getNumbers('1 кефир, 0.5 батона');
+getNumbers('агент 007');
+getNumbers('а я томат');
+
+
+//проверяет длину
+const checkLength = (string, maxLength) => string.length <= maxLength;
+
+checkLength('проверяемая строка', 20);
+
+
+//добавляет символы
 let addSymbols = function (string, minLength, stringAdd) {
 
   if (string.length + 1 >= minLength) {
@@ -20,68 +52,22 @@ let addSymbols = function (string, minLength, stringAdd) {
   }
 };
 
-//addSymbols('1', 2, '0');
+addSymbols('1', 2, '0');
 addSymbols('1', 4, '0');
-//addSymbols('q', 4, 'werty');
-//addSymbols('q', 4, 'we');
-//addSymbols('qwerty', 4, '0');
+addSymbols('q', 4, 'werty');
+addSymbols('q', 4, 'we');
+addSymbols('qwerty', 4, '0');
 
 
-let checkLength = function (string, maxLength) {
-  checkLength = string.length <= maxLength ? 'true' : 'false';
-  return checkLength;
-};
-
-checkLength('проверяемая строка', 20);
-
-
-let isPalindrome = function (string) {
+//проверяет палиндром
+const isPalindrome = function (string) {
 
   const stringModified = string.toLowerCase().replaceAll(' ', '');
 
   for (let i = 0; i < stringModified.length - 1; i++) {
-    isPalindrome = (stringModified.at(i) === stringModified.at(-(i + 1))) ? 'true' : 'false';
+    const stringPalindrome = (stringModified.at(i) === stringModified.at(-(i + 1))) ? 'true' : 'false';
+    return stringPalindrome;
   }
-  return isPalindrome;
 };
 
 isPalindrome('Лёша на полке клопа нашёл ');
-
-
-let checkPalindrome = function (string) {
-
-  const stringAdapt = string.toLowerCase().replaceAll(' ', '');
-  let stringReverse = '';
-
-  for (let i = stringAdapt.length - 1; i >= 0 ; i--) {
-    stringReverse += stringAdapt[i];
-    checkPalindrome = stringReverse === stringAdapt ? 'true' : 'false';
-  }
-  return checkPalindrome;
-};
-
-checkPalindrome('Лёша на полке клопа нашёл ');
-
-
-let getNumbers = function (string) {
-  let stringNew = '';
-
-  string = string.toString();
-
-  for (let i = 0; i <= string.length - 1; i++) {
-
-    if (!isNaN(parseInt(string[i], 10))) {
-      stringNew += parseInt(string[i], 10);
-    }
-
-    getNumbers = parseInt(stringNew, 10);
-  }
-  return getNumbers;
-};
-
-getNumbers(-20);
-getNumbers('2023 год');
-getNumbers('ECMAScript 2022');
-getNumbers('1 кефир, 0.5 батона');
-getNumbers('агент 007');
-getNumbers('а я томат');
