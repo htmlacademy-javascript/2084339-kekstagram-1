@@ -64,8 +64,13 @@ const isPalindrome = function (string) {
   let stringPalindrome;
 
   for (let i = 0; i < (stringModified.length / 2); i++) {
-    stringPalindrome = (stringModified.at(i) !== stringModified.at(-(i + 1))) ? 'false' : 'true' ;
+    if (stringModified.at(i) !== stringModified.at(-(i + 1))) {
+      return 'false';
+    } else {
+      stringPalindrome = 'true';
+    }
   }
+
   return stringPalindrome;
 };
 
