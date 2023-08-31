@@ -44,14 +44,14 @@ const getRandomArrayElement = (elements) => elements[getRandomInteger(0, element
 
 const createComment = () => ({
   commentID: getRandomInteger(1, 25),
-  commentAvatar: 'img/avatar-${getRandomInteger(1, 6)}.svg',
+  commentAvatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
   commentMessage: Array.from({length: getRandomInteger(1, 2)}, getRandomArrayElement(MESSAGES)),
   commentName: getRandomArrayElement(NAMES)
 });
 
 const createPhoto = () => ({
   photoID: getRandomInteger(1, 25),
-  photoURL: 'photos/${getRandomInteger(1, 25)}.jpg',
+  photoURL: `photos/${getRandomInteger(1, 25)}.jpg`,
   photoDescription: getRandomArrayElement(DESCRIPTIONS),
   photoLike: getRandomInteger(15, 200),
   photoComment: Array.from({length: getRandomInteger(1, 30)}, createComment)
