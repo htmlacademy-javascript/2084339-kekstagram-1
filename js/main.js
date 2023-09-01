@@ -41,11 +41,12 @@ const getRandomInteger = (a, b) => {
 };
 
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
+const messageArray = Array.from({length: getRandomInteger(1, 2)}, getRandomArrayElement(MESSAGES));
 
 const createComment = () => ({
   commentID: getRandomInteger(1, 25),
   commentAvatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
-  commentMessage: Array.from({length: getRandomInteger(1, 2)}, getRandomArrayElement(MESSAGES)),
+  commentMessage: messageArray.join(),
   commentName: getRandomArrayElement(NAMES)
 });
 
