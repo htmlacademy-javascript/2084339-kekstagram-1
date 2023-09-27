@@ -1,35 +1,9 @@
 import {getRandomInteger, getRandomArrayElement} from './util.js';
-
-const MESSAGES = [
-  'Всё отлично!',
-  'В целом всё неплохо. Но не всё.',
-  'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
-  'Моя бабушка случайно чихнула с фотоаппаратом в руках и у неё получилась фотография лучше.',
-  'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
-  'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
-];
-
-const DESCRIPTIONS = [
-  'Мои выходные',
-  'Фото на память',
-  'Доброе утро!',
-  'Просто оставлю это здесь',
-  'Ето я',
-  'Как вам?'
-];
-
-const NAMES = [
-  'Аня',
-  'Ваня',
-  'Маша',
-  'Саша',
-  'Юля',
-  'Юра'
-];
+import {MESSAGES, DESCRIPTIONS, NAMES} from './const.js';
 
 const PHOTOS_NUMBER = 25;
 
-const messageArray = Array.from({length: getRandomInteger(1, 2)}, getRandomArrayElement(MESSAGES));
+const messageArray = Array.from({length: getRandomInteger(1, 2)}, () => getRandomArrayElement(MESSAGES));
 
 const createComment = () => ({
   commentID: getRandomInteger(1, 25),
@@ -43,9 +17,9 @@ const createPhoto = () => ({
   photoURL: `photos/${getRandomInteger(1, 25)}.jpg`,
   photoDescription: getRandomArrayElement(DESCRIPTIONS),
   photoLike: getRandomInteger(15, 200),
-  photoComment: Array.from({length: getRandomInteger(1, 30)}, createComment)
+  photoComment: Array.from({length: getRandomInteger(1, 30)}, () => createComment)
 });
 
-const similarPhotos = () => Array.from({length: PHOTOS_NUMBER}, createPhoto);
+const similarPhotos = () => Array.from({length: PHOTOS_NUMBER}, () => createPhoto);
 
 export {similarPhotos};
