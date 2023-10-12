@@ -5,32 +5,29 @@ const commentsLoaderElement = bigPhotoModal.querySelector('.comments-loader');
 const commentTemplate = document.querySelector('#comment').content.querySelector('.social__comment');
 const commentsContainerElement = document.querySelector('.social__comments');
 
-const closeBigPhotoModal = () => {
+function closeBigPhotoModal () {
   bigPhotoModal.classList.add('hidden');
   document.body.classList.remove('modal-open');
-  document.removeEventListener('keydown', (evt) => {
-    evt.preventDefault();
-    if (evt.key === 'Escape') {
-      closeBigPhotoModal();
-    }
-  });
-};
+  document.removeEventListener('keydown', onDocumentKeydown);
+}
 
 closeButtonModalElement.addEventListener('click', () => {
   closeBigPhotoModal();
 });
+
+function onDocumentKeydown (evt) {
+  evt.preventDefault();
+  if (evt.key === 'Escape') {
+    closeBigPhotoModal();
+  }
+}
 
 const openBigPhotoModal = () => {
   bigPhotoModal.classList.remove('hidden');
   document.body.classList.add('modal-open');
   commentsCountElement.classList.add('hidden');
   commentsLoaderElement.classList.add('hidden');
-  document.addEventListener('keydown', (evt) => {
-    evt.preventDefault();
-    if (evt.key === 'Escape') {
-      closeBigPhotoModal();
-    }
-  });
+  document.addEventListener('keydown', onDocumentKeydown);
 };
 
 const createComment = ({ avatar, name, message }) => {
