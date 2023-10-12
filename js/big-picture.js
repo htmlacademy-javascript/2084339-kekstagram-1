@@ -57,7 +57,7 @@ const createBigPhoto = (data) => {
   bigPhotoModal.querySelector('.likes-count').textContent = data.photoLike;
   bigPhotoModal.querySelector('.comments-count').textContent = data.photoComment.length;
   bigPhotoModal.querySelector('.social__caption').textContent = data.photoDescription;
-  renderComments(data.comments);
+  renderComments(data.photoComment);
 };
 
 export {createBigPhoto, openBigPhotoModal};
