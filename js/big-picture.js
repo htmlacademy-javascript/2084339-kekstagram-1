@@ -53,10 +53,10 @@ const renderComments = (comments) => {
 };
 
 const createBigPhoto = (data) => {
-  bigPhotoModal.querySelector('.big-picture__img img').src = data.url;
-  bigPhotoModal.querySelector('.likes-count').textContent = data.likes;
-  bigPhotoModal.querySelector('.comments-count').textContent = data.comments.length;
-  bigPhotoModal.querySelector('.social__caption').textContent = data.description;
+  bigPhotoModal.querySelector('.big-picture__img img').src = data.photoURL;
+  bigPhotoModal.querySelector('.likes-count').textContent = data.photoLike;
+  bigPhotoModal.querySelector('.comments-count').textContent = data.photoComment.length;
+  bigPhotoModal.querySelector('.social__caption').textContent = data.photoDescription;
   renderComments(data.comments);
 };
 
