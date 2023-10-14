@@ -17,9 +17,9 @@ const createPhoto = () => ({
   photoURL: `photos/${getRandomInteger(1, 25)}.jpg`,
   photoDescription: getRandomArrayElement(DESCRIPTIONS),
   photoLike: getRandomInteger(15, 200),
-  photoComment: Array.from({length: getRandomInteger(1, 30)}, () => createComment)
+  photoComment: Array.from({length: getRandomInteger(1, 30)}, () => createComment())
 });
 
-const similarPhotos = () => Array.from({length: PHOTOS_NUMBER}, () => createPhoto);
+const similarPhotos = () => Array.from({length: PHOTOS_NUMBER}, () => createPhoto());
 
 export {similarPhotos};
